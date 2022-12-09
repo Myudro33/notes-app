@@ -18,7 +18,6 @@ function App() {
       date: new Date().toString(),
     }
   ]);
-console.log(JSON.parse(localStorage.storage));
 
   return (
     <>
