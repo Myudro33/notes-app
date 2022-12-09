@@ -2,12 +2,9 @@
   "name": "notes-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://myudro33.github.io/notes-app",
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "preview": "vite preview"
   },
