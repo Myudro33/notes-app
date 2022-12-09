@@ -5,10 +5,10 @@
   "homepage": "https://myudro33.github.io/notes-app",
   "type": "module",
   "scripts": {
+    "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
