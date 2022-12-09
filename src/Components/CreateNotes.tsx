@@ -30,6 +30,9 @@ export default function CreateNotes({ notes, setNotes }: ICreateNotesProps) {
         date: new Date().toString(),
       },
     ])
+     titleRef.current.value=""
+     textRef.current.value=""
+      colorRef.current.value=""
     };
 
   return (
