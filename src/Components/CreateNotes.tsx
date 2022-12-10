@@ -28,6 +28,7 @@ export default function CreateNotes({ notes, setNotes }: ICreateNotesProps) {
         text: (textRef.current as HTMLTextAreaElement).value,
         color: (colorRef.current as HTMLInputElement).value,
         date: new Date().toString(),
+
       },
     ])
   };
