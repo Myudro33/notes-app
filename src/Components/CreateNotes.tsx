@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/esm/Form";
 import { Note } from "../models/note.models";
@@ -15,7 +15,7 @@ export default function CreateNotes({ notes, setNotes }: ICreateNotesProps) {
   const colorRef = useRef<HTMLInputElement | null>(null);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault()
+    e.preventDefault();
     if (titleRef.current?.value === "" || textRef.current?.value === "") {
       return setError("error");
     }
@@ -30,10 +30,12 @@ export default function CreateNotes({ notes, setNotes }: ICreateNotesProps) {
         date: new Date().toString(),
       },
     ])
-     titleRef.current.value=""
-     textRef.current.value=""
-      colorRef.current.value=""
-    };
+  };
+
+  useEffect(()=>{
+    (titleRef.current as HTMLInputElement).value = "";
+    (textRef.current as HTMLTextAreaElement).value="";
+  },[notes])
 
   return (
     <Form className="my-5" onSubmit={(e) => submitHandler(e)}>
